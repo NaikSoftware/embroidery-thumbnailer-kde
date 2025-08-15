@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <!-- Tajima DST -->
+  <mime-type type="application/x-dst">
+    <comment>Tajima Embroidery Format</comment>
+    <icon name="application-x-embroidery"/>
+    <glob pattern="*.dst"/>
+    <glob pattern="*.DST"/>
+  </mime-type>
+
+  <!-- Janome JEF -->
+  <mime-type type="application/x-jef">
+    <comment>Janome Embroidery Format</comment>
+    <icon name="application-x-embroidery"/>
+    <glob pattern="*.jef"/>
+    <glob pattern="*.JEF"/>
+  </mime-type>
+</mime-info>

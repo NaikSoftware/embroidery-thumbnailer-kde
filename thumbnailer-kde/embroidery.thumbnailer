@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=/usr/bin/embroidery-thumbnailer
+Exec=/usr/bin/embroidery-thumbnailer -s %s %i %o
+MimeType=application/x-dst;application/x-jef;

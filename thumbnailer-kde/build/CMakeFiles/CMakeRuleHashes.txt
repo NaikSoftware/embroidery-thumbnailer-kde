@@ -1,0 +1,8 @@
+# Hashes of file build rules.
+0c075ae5597aff880f363695cf303e4a CMakeFiles/embroidery-thumbnailer_autogen
+0c075ae5597aff880f363695cf303e4a CMakeFiles/embroidery_static_autogen
+3370ae94830243935695205ae880fca0 CMakeFiles/fetch-translations
+022a76a39cfe89a9414ad47c8708280d CMakeFiles/uninstall
+f1981a0f5dbb7564b72f526c816fac02 embroidery-thumbnailer_autogen/timestamp
+175162289e8592206e6cfb4fa0bc687b embroidery_static_autogen/timestamp
+e20d05db14832758c617de0f9b336074 releaseme
