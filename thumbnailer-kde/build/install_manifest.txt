@@ -1,2 +1,0 @@
-/usr/bin/embroidery-thumbnailer
-/usr/share/thumbnailers/embroidery.thumbnailer
