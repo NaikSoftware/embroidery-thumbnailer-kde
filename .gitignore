@@ -1,0 +1,41 @@
+# Build directories
+build/
+thumbnailer-kde/build/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+
+# Compiled executables
+embroidery-thumbnailer
+*.exe
+
+# Static libraries
+*.a
+*.lib
+
+# Object files
+*.o
+*.obj
+
+# Qt MOC files
+moc_*.cpp
+*_autogen/
+
+# Test images
+*.png
+*.jpg
+*.jpeg
+
+# IDE files
+.vscode/
+.idea/
+*.pro.user
+
+# Temporary files
+*~
+*.tmp
+*.swp
