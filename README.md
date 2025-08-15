@@ -14,20 +14,10 @@ A KDE/Dolphin thumbnailer for embroidery files that generates preview thumbnails
 - KDE Frameworks 5
 - C++ compiler
 
-## Build
+## Build and Install
 
 ```bash
 cd thumbnailer-kde
-mkdir build && cd build
-cmake ..
-make
-```
-
-## Install
-
-From the build directory:
-
-```bash
 ./install.sh
 ```
 
