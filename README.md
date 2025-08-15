@@ -33,4 +33,6 @@ After installation, embroidery file thumbnails will appear automatically in Dolp
 
 ## License
 
+MIT License - see LICENSE file for details.
+
 Based on libembroidery library for embroidery file parsing.
