@@ -16,7 +16,7 @@ cd thumbnailer-kde
 
 The install script handles:
 - CMake configuration and compilation
-- Installation to `/usr/local/bin/`
+- Installation to `/usr/bin/` (KDEInstallDirs sets the prefix to `/usr`, matching Qt)
 - MIME type registration for DST, JEF and PES files
 - KDE plugin cache update
 - Thumbnail cache clearing
@@ -84,7 +84,7 @@ The thumbnailer implements KDE4-compatible rendering:
 
 ## MIME Type Configuration
 
-The thumbnailer is registered via `/usr/local/share/thumbnailers/embroidery.thumbnailer`:
+The thumbnailer is registered via `/usr/share/thumbnailers/embroidery.thumbnailer`:
 ```
 TryExec=/usr/bin/embroidery-thumbnailer
 Exec=/usr/bin/embroidery-thumbnailer -s %s %i %o
@@ -95,10 +95,10 @@ Supported formats are defined in `embroidery-mimetypes.xml` and registered syste
 
 ## Development Notes
 
-- The project targets KDE Frameworks 5 (not KF6)
+- Builds against Qt5/KF5, but the standalone binary is called through a `.thumbnailer` file, so it also works in Plasma 6 / KF6 Dolphin
 - libembroidery supports 60+ embroidery formats, but this thumbnailer currently only configures DST, JEF and PES
 - To add more formats: update `embroidery-mimetypes.xml` and `embroidery.thumbnailer` MimeType field
-- The thumbnailer expects files to be installed to system locations (`/usr/local/bin/`, `/usr/local/share/`)
+- The thumbnailer expects files to be installed to system locations (`/usr/bin/`, `/usr/share/`)
 - CMake install prefix can be customized via `CMAKE_INSTALL_PREFIX`
 
 ## Testing
@@ -108,8 +108,9 @@ After installation, test the thumbnailer:
 2. Navigate to folder with .dst, .jef or .pes files
 3. Enable preview mode (F11)
 4. Thumbnails should automatically generate
+5. If previews stay empty right after installing, fully quit Dolphin (`killall dolphin`) and reopen it: a Dolphin started before the install keeps the old file-type list
 
 To test the standalone executable directly:
 ```bash
-/usr/local/bin/embroidery-thumbnailer -s 256 input.dst output.png
+/usr/bin/embroidery-thumbnailer -s 256 input.dst output.png
 ```
