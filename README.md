@@ -6,6 +6,7 @@ A KDE/Dolphin thumbnailer for embroidery files that generates preview thumbnails
 
 - DST (Tajima Embroidery Format)
 - JEF (Janome Embroidery Format)
+- PES (Brother Embroidery Format)
 
 ## Requirements
 
@@ -23,7 +24,7 @@ cd thumbnailer-kde
 
 This will:
 - Install the thumbnailer executable to `/usr/local/bin/`
-- Register MIME types for DST and JEF files
+- Register MIME types for DST, JEF and PES files
 - Configure the thumbnailer service
 - Clear thumbnail cache
 

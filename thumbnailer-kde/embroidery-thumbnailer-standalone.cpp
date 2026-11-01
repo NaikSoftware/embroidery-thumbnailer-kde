@@ -79,15 +79,17 @@ int main(int argc, char *argv[])
             continue;
         }
         
+        // Stitches are drawn at -y, so bounds must use -y too.
+        const double y = -stitch.y;
         if (!boundsInitialized) {
             minX = maxX = stitch.x;
-            minY = maxY = stitch.y;
+            minY = maxY = y;
             boundsInitialized = true;
         } else {
             if (stitch.x < minX) minX = stitch.x;
             if (stitch.x > maxX) maxX = stitch.x;
-            if (stitch.y < minY) minY = stitch.y;
-            if (stitch.y > maxY) maxY = stitch.y;
+            if (y < minY) minY = y;
+            if (y > maxY) maxY = y;
         }
     }
     

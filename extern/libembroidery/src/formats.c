@@ -4610,6 +4610,8 @@ readPecStitches(EmbPattern* pattern, FILE* file)
             if (val1 & 0x20) stitchType = TRIM;
             if (val1 & 0x10) stitchType = JUMP;
             val1 = ((val1 & 0x0F) << 8) + val2;
+            /* b[1] was X's low byte, so Y starts at the next byte. */
+            val2 = fgetc(file);
 
             /* Signed 12-bit arithmetic */
             if (val1 & 0x800) {
@@ -4984,7 +4986,6 @@ int pes_version = PES0001;
 char
 readPes(EmbPattern* pattern, const char *fileName, FILE* file)
 {
-    printf("%s", fileName);
     int pecstart, numColors, x, version, i;
     char signature[9];
     if (fread(signature, 1, 8, file) != 8) {
@@ -5035,9 +5036,10 @@ readPes(EmbPattern* pattern, const char *fileName, FILE* file)
         break;
     }
 
-    /* fseek(file, pecstart + 48, SEEK_SET);
-     * This seems wrong based on the readPESHeader functions. */
-    fseek(file, pecstart, SEEK_SET);
+    /* PEC color count sits after the 48-byte label block. PES header threads
+     * (v5+) are dropped so thread indices match PEC color changes. */
+    fseek(file, pecstart + 48, SEEK_SET);
+    pattern->thread_list->count = 0;
 
     numColors = fgetc(file) + 1;
     for (x = 0; x < numColors; x++) {

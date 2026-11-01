@@ -15,4 +15,15 @@
     <glob pattern="*.jef"/>
     <glob pattern="*.JEF"/>
   </mime-type>
+
+  <!-- Brother PES -->
+  <mime-type type="application/x-pes">
+    <comment>Brother Embroidery Format</comment>
+    <icon name="application-x-embroidery"/>
+    <magic priority="50">
+      <match type="string" value="#PES" offset="0"/>
+    </magic>
+    <glob pattern="*.pes"/>
+    <glob pattern="*.PES"/>
+  </mime-type>
 </mime-info>
